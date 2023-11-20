@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.exerciciodepoo.Controlador2"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.exerciciodepoo.Controlador2">
+   <children>
+      <Button fx:id="buttonVoltar" layoutX="529.0" layoutY="360.0" mnemonicParsing="false" onAction="#mudarCena" text="Voltar" />
+      <Label fx:id="labelEventos" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="5.0" prefHeight="352.0" prefWidth="582.0" text="mds n da certo" />
+      <Label layoutX="120.0" layoutY="5.0" text="TODOS EVENTOS CADASTRADOS">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

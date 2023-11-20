@@ -17,10 +17,10 @@ public class Ciclone extends Evento{
         this.precipitacao = precipitacao;
         this.velocidade = velocidade;
     }
-    public String toString() {
+    public String toString(){
         return "Ciclone\n" + super.toString()+ String.format("""
                 Velocidade: %.2f
                 Precipitação: %.2f
-                ============================""",velocidade, precipitacao);
+                ============================\n""",velocidade, precipitacao);
     }
 }

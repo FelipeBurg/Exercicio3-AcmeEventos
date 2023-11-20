@@ -10,7 +10,7 @@ public class Seca extends Evento{
         return seca;
     }
     public String toString() {
-        return "Seca" + super.toString()+ String.format("""
+        return "Seca\n" + super.toString()+ String.format("""
                 Seca: %d
                 ==================================""",seca);
     }

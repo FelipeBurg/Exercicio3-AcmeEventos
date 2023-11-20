@@ -100,7 +100,7 @@
             <TextField fx:id="textFieldPrecipitacao" layoutX="171.0" layoutY="36.0" prefHeight="26.0" prefWidth="291.0" promptText="150.10" visible="false" />
             <Button fx:id="buttonConfirmar" layoutX="317.0" layoutY="114.0" mnemonicParsing="false" onAction="#buttonClickAction" prefHeight="28.0" prefWidth="116.0" text="Confirmar" />
             <Button fx:id="buttonLimpar" layoutX="171.0" layoutY="114.0" mnemonicParsing="false" onAction="#limparDados" prefHeight="28.0" prefWidth="116.0" text="Limpar" />
-            <Button fx:id="buttonMostraDados" layoutX="462.0" layoutY="158.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="116.0" text="MOSTRAR DADOS" />
+            <Button fx:id="buttonMostraDados" layoutX="462.0" layoutY="158.0" onAction="#mudarCena" mnemonicParsing="false" prefHeight="28.0" prefWidth="116.0" text="MOSTRAR DADOS" />
             <TextField fx:id="textFieldSeca" layoutX="171.0" layoutY="1.0" prefHeight="26.0" prefWidth="291.0" promptText="10" visible="false" />
             <TextField fx:id="textFieldVelocidade" layoutX="171.0" layoutY="1.0" prefHeight="26.0" prefWidth="291.0" promptText="200.5" visible="false" />
             <Label fx:id="labelCodigo" layoutX="26.0" layoutY="73.0" text="CÓDIGO:">

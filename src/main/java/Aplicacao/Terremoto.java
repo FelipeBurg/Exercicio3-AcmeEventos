@@ -13,6 +13,6 @@ public class Terremoto extends Evento{
     @Override
     public String toString() {
         return "Terremoto\n" + super.toString()+ String.format("Magnitude: %.2f\n" +
-                "====================",magnitude);
+                "====================\n",magnitude);
     }
 }

@@ -36,10 +36,7 @@ public class CadastroEvento {
     public void ordenarEventos() {
         Collections.sort(eventos, Comparator.comparing(Evento::getCodigo));
     }
-    public Evento todosEventos() {
-        for (Evento evento : eventos) {
-            return evento; // Isso chamará o método toString() de cada evento
-        }
-        return null;
+    public ArrayList<Evento> todosEventos() {
+        return eventos;
     }
 }

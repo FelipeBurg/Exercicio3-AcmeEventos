@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -47,6 +46,8 @@ public class Controlador implements Initializable {
     @FXML
     private TextField textFieldCodigo;
     AcmeEventos acmeEventos = new AcmeEventos();
+    private Main main;
+
     @FXML
 
     public void fecharApp(){
@@ -57,7 +58,9 @@ public class Controlador implements Initializable {
         choiceBoxEventos.getItems().addAll(evento);
         choiceBoxEventos.setOnAction(event -> choiceBoxChange()); // Chama o método quando a escolha inicial muda
     }
-
+    public void setMain(Main main) {
+        this.main = main;
+    }
     public void getEvento(ActionEvent event){
         String myEvento = choiceBoxEventos.getValue();
     }
@@ -93,6 +96,7 @@ public class Controlador implements Initializable {
             if (selectedEvent.equals("Terremoto")){
                 double magnitude = Double.parseDouble(textFieldMagnitude.getText());
                 mensagem = acmeEventos.cadT(codigo,data,longitude,latitude,magnitude);
+                System.out.println(acmeEventos.mostrarEventos());
                 exibirMensagem(mensagem);
             }
             else if(selectedEvent.equals("Ciclone")){
@@ -132,5 +136,7 @@ public class Controlador implements Initializable {
         labelConfirma.setVisible(true);
         labelConfirma.setText(mensagem);
     }
-
+    public void mudarCena(ActionEvent actionEvent){
+        main.mudar(2);
+    }
 }
