@@ -8,12 +8,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controlador implements Initializable {
+
     @FXML
-    private Button buttonFechar;
-    @FXML
-    private Button buttonConfirmar;
-    @FXML
-    private Button buttonLimpar;
+    private Label   labelCadEvento;
     @FXML
     private TextField textFieldLong;
     @FXML
@@ -45,10 +42,10 @@ public class Controlador implements Initializable {
     private Label labelCodigo;
     @FXML
     private TextField textFieldCodigo;
+    @FXML
+    private TextArea textAreaDados;
     AcmeEventos acmeEventos = new AcmeEventos();
     private Main main;
-
-    @FXML
 
     public void fecharApp(){
         System.exit(0);
@@ -96,7 +93,6 @@ public class Controlador implements Initializable {
             if (selectedEvent.equals("Terremoto")){
                 double magnitude = Double.parseDouble(textFieldMagnitude.getText());
                 mensagem = acmeEventos.cadT(codigo,data,longitude,latitude,magnitude);
-                System.out.println(acmeEventos.mostrarEventos());
                 exibirMensagem(mensagem);
             }
             else if(selectedEvent.equals("Ciclone")){
@@ -110,8 +106,14 @@ public class Controlador implements Initializable {
                 mensagem = acmeEventos.cadS(codigo,data,longitude,latitude,seca);
                 exibirMensagem(mensagem);
             }
+        } catch (NumberFormatException e) {
+            exibirMensagem("Erro de formato numérico: Por favor, insira valores numéricos válidos.");
+        } catch (NullPointerException e) {
+            exibirMensagem("Erro de referência nula: Certifique-se de preencher todos os campos obrigatórios.");
+        } catch (IllegalArgumentException e) {
+            exibirMensagem("Erro de argumento inválido: O evento selecionado não é válido."); // tem nem como, mas coloquei
         } catch (Exception e) {
-            labelConfirma.setText("Erro :"+ e.getMessage());
+            exibirMensagem("Erro desconhecido: " + e.getMessage());
         }
     }
     private void limparCampos() {
@@ -131,12 +133,18 @@ public class Controlador implements Initializable {
         textFieldSeca.setText(null);
         textFieldPrecipitacao.setText(null);
         textFieldCodigo.setText(null);
+        textAreaDados.setText(null);
+        labelCadEvento.setVisible(false);
     }
     public void exibirMensagem(String mensagem){
         labelConfirma.setVisible(true);
         labelConfirma.setText(mensagem);
     }
-    public void mudarCena(ActionEvent actionEvent){
-        main.mudar(2);
+    public void mostrarDados() {
+        String eventosStr = acmeEventos.mostrarEventos();
+        textAreaDados.setVisible(true);
+        textAreaDados.setText(eventosStr);
+        labelCadEvento.setVisible(true);
     }
+
 }

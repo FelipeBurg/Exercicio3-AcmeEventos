@@ -1,7 +1,5 @@
 package Aplicacao;
 
-import com.example.exerciciodepoo.Controlador2;
-
 import java.util.ArrayList;
 
 public class AcmeEventos {
@@ -13,7 +11,7 @@ public class AcmeEventos {
             cadEvent.ordenarEventos();
             return "Terremoto cadastrado com sucesso!";
         } else {
-            return "Erro: terremoto já cadastrado!";
+            return "Erro: código do evento já cadastrado!";
         }
     }
     public String cadC(String codigo, String data, double longitude, double latitude, double velocidade, double preciptacao){
@@ -22,7 +20,7 @@ public class AcmeEventos {
             cadEvent.ordenarEventos();
             return "Ciclone cadastrado com sucesso!";
         } else {
-            return "Erro: ciclone já cadastrado!";
+            return "Erro: código do evento já cadastrado!";
         }
     }
     public String cadS(String codigo, String data, double longitude, double latitude, int seca){
@@ -31,7 +29,7 @@ public class AcmeEventos {
             cadEvent.ordenarEventos();
             return "Seca cadastrada com sucesso!";
         } else {
-            return "Erro: seca já cadastrada!";
+            return "Erro: código do evento já cadastrado!";
         }
     }
     public String mostrarEventos(){
